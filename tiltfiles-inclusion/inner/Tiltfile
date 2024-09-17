@@ -1,0 +1,34 @@
+
+TEST2 = "test2"
+t = True
+
+# works as expected
+config.define_bool(TEST2)
+
+def test(cfg):
+  print(cfg.get(TEST2))
+
+  # can define a function in a function
+  def foo():
+    print("Hello")
+
+  return {
+    "configs": {
+      TEST2: cfg.get(TEST2),
+    },
+    # returning functions is supported
+    "set": set,
+    "foo": foo
+  }
+
+def get():
+  return t
+
+def set(v):
+  # does not work, t is immutable
+  # get will always return True
+  t = v
+
+# will execute
+print(t)
+

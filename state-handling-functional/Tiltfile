@@ -1,0 +1,17 @@
+
+load("./ext.star", 'my_custom_options', 'opts2')
+
+someopts = ["hello", "world", "foo"]
+
+print(someopts)
+
+newopts = my_custom_options(someopts)
+print(newopts) 
+
+print(newopts())
+print(newopts())
+print(newopts())
+
+newopts2 = opts2()
+print(newopts2())
+print(newopts2(["asd"]))

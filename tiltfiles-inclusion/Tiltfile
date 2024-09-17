@@ -1,0 +1,22 @@
+
+load('./inner/Tiltfile', 'test', 'get', 'set')
+
+TEST = "test"
+config.define_bool(TEST)
+
+# config.parse can be run multiple times but no config.define_* can be run after it
+cfg = config.parse()
+
+print(cfg)
+
+p = test(cfg)
+print(p)
+
+set(False)
+print(get())
+
+p["set"](False)
+print(get())
+
+p["foo"]()
+

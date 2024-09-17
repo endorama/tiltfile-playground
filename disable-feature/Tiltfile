@@ -1,0 +1,10 @@
+load("./feature.star", 'configure', 'execute')
+
+configure()
+
+# all configure must be run before here
+cfg = config.parse()
+
+print(cfg)
+print(cfg.get("disable_feature")) # prints "None"
+execute(cfg)

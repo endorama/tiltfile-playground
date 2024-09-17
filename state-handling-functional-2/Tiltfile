@@ -1,0 +1,18 @@
+
+load("./module.star", 'opts')
+load("./module2.star", m2opts='opts')
+
+shared_values = [
+  "--set=first=foo", "--set=second=bar"
+]
+
+withmoduleval = opts()
+print(shared_values)
+print(withmoduleval(shared_values))
+
+cfg = config.parse()
+
+withm2 = m2opts(cfg)
+print(withm2())
+
+

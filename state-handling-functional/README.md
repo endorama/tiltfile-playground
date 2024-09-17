@@ -1,0 +1,1 @@
+Explore functional programming approach to managing local state. As module variables are frozen in Starlark, sharing state between modules and the main Tiltfile can leverage functional programming patterns.

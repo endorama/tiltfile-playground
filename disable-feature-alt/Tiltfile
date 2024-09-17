@@ -1,0 +1,5 @@
+load("./feature.star", 'configure', 'execute')
+
+configure()
+
+execute()
